@@ -12,11 +12,20 @@ var http = require("http");
 var GOODPORT = 7000;
 var BADPORT = 7500;
 
+var niceThings = ["you have a smile", "you the man", "luv u"];
+var badThings = ["your code smells"];
 
+function getRandomItem = function(itemArray){
+    var size = itemArray.length;
+    var index = Math.floor(Math.random() *  size);
 
+    return itemArray[index];
+}
 
+//starting goodServer
 var goodServer = http.createServer(function(req, res){
-    res.end("Great job your server is running!!!!!");
+    var num = getRandomItem(niceThings.count);
+    res.end(niceThings[num]);
 });
 
 goodServer.listen(GOODPORT, function(){
