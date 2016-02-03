@@ -13,7 +13,7 @@ var GOODPORT = 7000;
 var BADPORT = 7500;
 
 var niceThings = ["you have a smile", "you the man", "luv u"];
-var badThings = ["your code smells"];
+var badThings = ["your code smells", "your code is non performant", "your code is not DRY"];
 
 function getRandomItem = function(itemArray){
     var size = itemArray.length;
@@ -24,7 +24,6 @@ function getRandomItem = function(itemArray){
 
 //starting goodServer
 var goodServer = http.createServer(function(req, res){
-    var num = getRandomItem(niceThings.count);
     res.end(niceThings[num]);
 });
 
@@ -32,6 +31,7 @@ goodServer.listen(GOODPORT, function(){
     console.log("server is listening at http://localhost:%s", GOODPORT);
 })
 
+//starting badServer
 var badServer = http.createServer(function(req, res){
     res.end("your server blows!!!!!");
 });
